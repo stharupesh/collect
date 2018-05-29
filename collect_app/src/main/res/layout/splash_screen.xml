@@ -2,38 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="#ffffff"
     android:gravity="center_vertical|center_horizontal"
-    android:orientation="vertical"
-    android:padding="10dip">
+    android:padding="0dip"
+    android:visibility="visible">
 
     <ImageView
         android:id="@+id/splash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
+        android:layout_width="10000px"
+        android:layout_height="10000px"
+        android:background="#ffffffff"
         android:contentDescription="@string/app_name"
-        android:gravity="center"
+        android:gravity="fill"
         android:padding="0dip"
         android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/splash_default"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="10000px"
+        android:layout_height="10000px"
+        android:background="#ffffff"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal"
-        android:paddingBottom="5dip">
+        android:paddingBottom="5dip"
+        android:visibility="visible">
 
         <ImageView
             android:layout_width="72dip"
             android:layout_height="72dip"
+            android:background="@android:color/background_light"
             android:contentDescription="@string/app_name"
             android:src="@drawable/notes" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="?android:attr/colorLongPressedHighlight"
             android:gravity="center_vertical|start"
             android:orientation="vertical"
             android:paddingBottom="5dip">

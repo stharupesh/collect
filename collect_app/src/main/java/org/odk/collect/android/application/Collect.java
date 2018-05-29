@@ -15,6 +15,7 @@
 package org.odk.collect.android.application;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -276,8 +277,24 @@ public class Collect extends Application implements HasActivityInjector {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         JodaTimeAndroid.init(this);
 
-        defaultSysLanguage = Locale.getDefault().getLanguage();
+        //defaultSysLanguage = Locale.getDefault().getLanguage();
+
+        defaultSysLanguage = "ja";
+
         new LocaleHelper().updateLocale(this);
+
+        Locale locale = new Locale("ja");
+        Locale.setDefault(locale);
+        // Create a new configuration object
+        Configuration config = new Configuration();
+        // Set the locale of the new configuration
+        config.locale = locale;
+        // Update the configuration of the Accplication context
+        getResources().updateConfiguration(
+                config,
+                getResources().getDisplayMetrics()
+        );
+
 
         FormMetadataMigrator.migrate(PreferenceManager.getDefaultSharedPreferences(this));
         AutoSendPreferenceMigrator.migrate();
